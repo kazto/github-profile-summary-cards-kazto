@@ -1,10 +1,21 @@
-- name: GitHub-Profile-Summary-Cards
-  uses: vn7n24fzkq/github-profile-summary-cards@v0.7.0
-  env:
-    GITHUB_TOKEN: ${{ secrets.PROFILE_SUMMARY_CARD_TOKEN }}
-  with:
-    USERNAME: ${{ github.repository_owner }}
-    BRANCH_NAME: "main"
-    UTC_OFFSET: 8
-    EXCLUDE: ""
-    AUTO_PUSH: true
+name: GitHub-Profile-Summary-Cards
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub-Profile-Summary-Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@v0.7.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_SUMMARY_CARD_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: "main"
+          UTC_OFFSET: 9
+          EXCLUDE: ""
+          AUTO_PUSH: true
