@@ -52,3 +52,13 @@
 ```
 
     
+
+---
+
+![](./4-productive-time.svg)
+
+```
+![](https://raw.githubusercontent.com/kazto/github-profile-summary-cards-kazto/main/profile-summary-card-output/chartreuse_dark/4-productive-time.svg)
+```
+
+    
